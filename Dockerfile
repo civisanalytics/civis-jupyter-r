@@ -3,7 +3,7 @@ MAINTAINER support@civisanalytics.com
 
 ENV DEFAULT_KERNEL=ir \
     TINI_VERSION=v0.16.1 \
-    CIVIS_JUPYTER_NOTEBOOK_VERSION=0.2
+    CIVIS_JUPYTER_NOTEBOOK_VERSION=0.2.1
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && \
     apt-get install -y --no-install-recommends \
@@ -31,7 +31,7 @@ RUN chmod +x /tini
 # TODO: investigate
 RUN ln -s /bin/tar/ /bin/gtar
 
-RUN pip install civis-jupyter-notebook~=${CIVIS_JUPYTER_NOTEBOOK_VERSION} && \
+RUN pip install civis-jupyter-notebook==${CIVIS_JUPYTER_NOTEBOOK_VERSION} && \
     civis-jupyter-notebooks-install
 
 COPY ./setup.R /setup.R
