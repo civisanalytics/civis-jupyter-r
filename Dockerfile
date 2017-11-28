@@ -31,7 +31,7 @@ RUN chmod +x /tini
 # TODO: investigate
 RUN ln -s /bin/tar/ /bin/gtar
 
-RUN pip install civis-jupyter-notebook==${CIVIS_JUPYTER_NOTEBOOK_VERSION} && \
+RUN pip install git+https://github.com/civisanalytics/civis-jupyter-notebook.git@3bf34eb2dbc36ea7f7db131fc41aced8dea79607 && \
     civis-jupyter-notebooks-install
 
 COPY ./setup.R /setup.R
