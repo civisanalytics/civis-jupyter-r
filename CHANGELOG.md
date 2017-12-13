@@ -5,7 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 # [1.2.0] - 2017-12-13
-- Upgraded civis-jupyter-notebook to 0.3.0
+- Upgraded civis-jupyter-notebook to 0.3.1
 
 # [1.1.0] - 2017-11-10
 - Upgraded civis-r to 1.1.0
