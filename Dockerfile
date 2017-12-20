@@ -12,6 +12,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && 
         fonts-dejavu \
         gfortran \
         python-dev \
+        vim \
+        nano \
+        emacs \
         gcc &&  \
     apt-get clean -y && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
