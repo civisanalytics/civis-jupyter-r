@@ -1,0 +1,12 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.6.5
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run: docker build -t civisanalytics/civis-jupyter-r .
+      - run: docker run civisanalytics/civis-jupyter-r /bin/bash -c "echo BUILDS OK"
+      - run: docker run civisanalytics/civis-jupyter-r python -c "import civis"
+      - run: docker run civisanalytics/civis-jupyter-r /bin/bash -c "Rscript -e \"library(civis); q(save = 'no')\""
