@@ -1,4 +1,4 @@
-FROM rocker/verse:3.4.2
+FROM rocker/verse:3.5.0
 MAINTAINER support@civisanalytics.com
 
 ENV DEFAULT_KERNEL=ir \
