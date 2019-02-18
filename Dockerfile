@@ -1,4 +1,4 @@
-FROM rocker/verse:3.5.0
+FROM rocker/verse:3.5.2
 MAINTAINER support@civisanalytics.com
 
 ENV DEFAULT_KERNEL=ir \
@@ -34,7 +34,8 @@ RUN chmod +x /tini
 # TODO: investigate
 RUN ln -s /bin/tar/ /bin/gtar
 
-RUN pip install civis-jupyter-notebook==${CIVIS_JUPYTER_NOTEBOOK_VERSION} && \
+RUN pip install notebook==5.4.1 \
+    civis-jupyter-notebook==${CIVIS_JUPYTER_NOTEBOOK_VERSION} && \
     civis-jupyter-notebooks-install
 
 COPY ./setup.R /setup.R
