@@ -34,8 +34,8 @@ RUN chmod +x /tini
 # TODO: investigate
 RUN ln -s /bin/tar/ /bin/gtar
 
-RUN pip install notebook==5.4.1 \
-    civis-jupyter-notebook==${CIVIS_JUPYTER_NOTEBOOK_VERSION} && \
+RUN pip install notebook==5.7.8 \
+    git+https://github.com/civisanalytics/civis-jupyter-notebook.git@CIVP-18964-upgrade-notebook-package && \
     civis-jupyter-notebooks-install
 
 COPY ./setup.R /setup.R
