@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+# [1.8.0] - 2019-09-09
+
+### Changed
+
+- rocker/verse -> 3.6.0
+- R -> 3.6.0
+- civis-r -> 2.1.0
 
 # [1.7.1] - 2019-09-03
 ### Changed
