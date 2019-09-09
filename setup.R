@@ -1,6 +1,6 @@
 # Install civis R client
 options(unzip='internal');
-devtools::install_github('civisanalytics/civis-r', ref = 'v2.0.0', upgrade_dependencies = FALSE);
+devtools::install_github('civisanalytics/civis-r', ref = 'v2.1.0', upgrade_dependencies = FALSE);
 
 # Install R Kernel for Jupyter
 install.packages(c('IRdisplay', 'pbdZMQ'))
