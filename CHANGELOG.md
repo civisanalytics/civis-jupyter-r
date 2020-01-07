@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+# [1.9.0] - 2020-01-07
+
+### Changed
+
+- datascience-r -> 3.2.0
+- rocker/verse -> 3.6.1
+- 30+ packages added to requirements.txt
+- Geospatial system dependencies
+- Many new packages
+- IRkernel -> 1.0.2
+
 # [1.8.0] - 2019-09-09
 
 ### Changed
@@ -26,7 +37,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - IRkernel -> 1.0.0
 
 # [1.6.1] - 2019-05-13
-###Changed
+
+### Changed
 - civis-jupyter-notebooks v0.4.2 -> v1.0.0 (#18)
 
 # [1.6.0] - 2019-02-18

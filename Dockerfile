@@ -1,4 +1,4 @@
-FROM rocker/verse:3.6.0
+FROM civisanalytics/datascience-r:3.2.0
 MAINTAINER support@civisanalytics.com
 
 ENV DEFAULT_KERNEL=ir \
