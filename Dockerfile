@@ -5,26 +5,28 @@ ENV DEFAULT_KERNEL=ir \
     TINI_VERSION=v0.16.1 \
     CIVIS_JUPYTER_NOTEBOOK_VERSION=1.0.1
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && \
+# for python3.7
+RUN echo 'deb http://ftp.debian.org/debian stable main' >> /etc/apt/sources.list
+
+RUN DEBIAN_FRONTEND=noninteractive apt-get update -y  && \
     apt-get install -y --no-install-recommends \
-        curl \
         wget \
         fonts-dejavu \
         gfortran \
-        python-dev \
         vim \
         nano \
         emacs \
-        gcc &&  \
-    apt-get clean -y && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+        gcc  \
+        build-essential \
+        python3.7 \
+        python3-pip \
+        python3-setuptools \
+        libcurl3 && \
+        apt-get clean -y && \
+        rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-# Install pip
-RUN curl -s https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
-    python get-pip.py && \
-    pip install --upgrade pip setuptools && \
-    rm -rf ~/.cache/pip && \
-    rm -f get-pip.py
+# instead of virtual env, just use python3.7 as default
+RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1
 
 # Install Tini
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
@@ -34,7 +36,9 @@ RUN chmod +x /tini
 # TODO: investigate
 RUN ln -s /bin/tar/ /bin/gtar
 
-RUN pip install civis-jupyter-notebook==${CIVIS_JUPYTER_NOTEBOOK_VERSION} && \
+RUN pip3 install wheel && \
+    pip3 install civis-jupyter-notebook==${CIVIS_JUPYTER_NOTEBOOK_VERSION} \
+      cbor2==4.1.2 && \
     civis-jupyter-notebooks-install
 
 COPY ./setup.R /setup.R
