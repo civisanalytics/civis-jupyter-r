@@ -37,7 +37,7 @@ RUN chmod +x /tini
 RUN ln -s /bin/tar/ /bin/gtar
 
 RUN pip3 install wheel && \
-    pip3 install civis-jupyter-notebook==${CIVIS_JUPYTER_NOTEBOOK_VERSION} \
+    pip3 install git+git://github.com/civisanalytics/civis-jupyter-notebook@secure-cookie \
       cbor2==4.1.2 && \
     civis-jupyter-notebooks-install
 
