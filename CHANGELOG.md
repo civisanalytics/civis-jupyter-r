@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 
-- civis-r -> 2.1.2
+- datascience-r  -> 2.1.2
 
 # [1.10.1] - 2020-01-30
 ### Changed
