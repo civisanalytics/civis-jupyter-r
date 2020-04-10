@@ -1,4 +1,4 @@
-FROM civisanalytics/datascience-r:3.2.1
+FROM civisanalytics/datascience-r:3.3.0
 MAINTAINER support@civisanalytics.com
 
 ENV DEFAULT_KERNEL=ir \
