@@ -1,4 +1,4 @@
-FROM civisanalytics/datascience-r:3.2.1
+FROM civisanalytics/datascience-r:3.3.0
 MAINTAINER support@civisanalytics.com
 
 ENV DEFAULT_KERNEL=ir \
@@ -21,7 +21,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -y  && \
         python3.7 \
         python3-pip \
         python3-setuptools \
-        libcurl3 && \
+        libcurl4 && \
         apt-get clean -y && \
         rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
