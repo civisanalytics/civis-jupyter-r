@@ -9,6 +9,21 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - datascience-r -> 4.0.1
 
+
+# [1.11.0] - 2020-04-13
+
+### Changed
+
+- datascience-r -> 3.3.0
+
+- libcurl3 -> libcurl4
+
+# [1.10.2] - 2020-02-24
+
+### Changed
+
+- datascience-r -> 2.1.2
+
 # [1.10.1] - 2020-01-30
 ### Changed
 - update civis-jupyter-notebook version to v1.0.2 (#26)
