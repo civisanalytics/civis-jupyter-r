@@ -5,9 +5,6 @@ ENV DEFAULT_KERNEL=ir \
     TINI_VERSION=v0.16.1 \
     CIVIS_JUPYTER_NOTEBOOK_VERSION=1.0.2
 
-# for python3.7
-#RUN echo 'deb http://ftp.debian.org/debian stable main' >> /etc/apt/sources.list
-
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -y  && \
     apt-get install -y --no-install-recommends \
         wget \
@@ -19,7 +16,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -y  && \
         gcc  \
         build-essential \
         libcurl4 && \
-        apt-get clean -y 
+        apt-get clean -y && \
+        rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # instead of virtual env, just use python3.7 as default
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 1
