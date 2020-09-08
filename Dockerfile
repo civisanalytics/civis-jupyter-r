@@ -3,7 +3,7 @@ MAINTAINER support@civisanalytics.com
 
 ENV DEFAULT_KERNEL=ir \
     TINI_VERSION=v0.16.1 \
-    CIVIS_JUPYTER_NOTEBOOK_VERSION=1.0.2
+    CIVIS_JUPYTER_NOTEBOOK_VERSION=2.0.0
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -y  && \
     apt-get install -y --no-install-recommends \
