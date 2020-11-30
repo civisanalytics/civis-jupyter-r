@@ -9,8 +9,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - datascience-r -> 4.0.2
 
-# [2.0.0] - 2020-08-10
-
 # [2.1.0] - 2020-09-09
 
 ### Changed
