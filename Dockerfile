@@ -37,4 +37,6 @@ EXPOSE 8888
 WORKDIR /root/work
 
 ENTRYPOINT ["/tini", "--"]
-CMD ["civis-jupyter-notebooks-start"]
+# Hide the banner about Notebook 7 migration
+# (cf. https://discourse.jupyter.org/t/how-to-disable-message-banner-in-notebook-6-5-4/19422/2)
+CMD ["civis-jupyter-notebooks-start", "--NotebookApp.show_banner=False"]
