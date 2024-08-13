@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+# [3.0.0] - 2024-08-13
+
+### Changed
+- datascience-r -> 6.0.0
+- civis-jupyter-notebook -> 2.2.0
+- tini -> v0.19.0
+
 # [2.2.0] - 2021-04-16
 
 ### Changed
