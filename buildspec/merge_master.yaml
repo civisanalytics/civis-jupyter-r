@@ -3,12 +3,12 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
-      - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
+      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin ${FIPS_REPOSITORY_URI}
   build:
     commands:
       - echo Building the Docker image...
-      - docker build -t ${REPOSITORY_URI}:latest .
-      - docker push ${REPOSITORY_URI}
+      - docker build -t ${FIPS_REPOSITORY_URI}:latest .
+      - docker push ${FIPS_REPOSITORY_URI}:latest
   post_build:
     commands:
       - echo Build completed!

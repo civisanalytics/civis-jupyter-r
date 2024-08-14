@@ -3,17 +3,19 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
-      - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
+      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin ${FIPS_REPOSITORY_URI}
       - export COMMIT_HASH_SHORT="$(echo $COMMIT_HASH | cut -c 1-7)"
   build:
     commands:
       - echo Building the Docker image...
-      - echo $REPOSITORY_URI
+      - echo $FIPS_REPOSITORY_URI
       - echo $COMMIT_HASH_SHORT
       - echo $BRANCH_NAME
-      - docker build --tag ${REPOSITORY_URI}:${COMMIT_HASH_SHORT} --tag ${REPOSITORY_URI}:${BRANCH_NAME} .
-      - docker push ${REPOSITORY_URI}:${COMMIT_HASH_SHORT}
-      - docker push ${REPOSITORY_URI}:${BRANCH_NAME}
+      - docker build --tag ${FIPS_REPOSITORY_URI}:${COMMIT_HASH_SHORT} --tag ${FIPS_REPOSITORY_URI}:${BRANCH_NAME} .
+      # This config tests the codebuild login and the build but does not push dev images.
+      # The following lines can be temporarily uncommented to test a dev image.
+      # - docker push ${FIPS_REPOSITORY_URI}:${COMMIT_HASH_SHORT}
+      # - docker push ${FIPS_REPOSITORY_URI}:${BRANCH_NAME}
   post_build:
     commands:
       - echo Build completed!
