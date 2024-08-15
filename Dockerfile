@@ -4,7 +4,7 @@ LABEL org.opencontainers.image.authors="support@civisanalytics.com"
 
 ENV DEFAULT_KERNEL=ir \
     TINI_VERSION=v0.19.0 \
-    CIVIS_JUPYTER_NOTEBOOK_VERSION=2.2.0
+    CIVIS_JUPYTER_NOTEBOOK_VERSION=2.2.1
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -y  && \
     apt-get install -y --no-install-recommends \
